@@ -8,18 +8,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
-    <style>
-        a {
-            text-decoration: inherit;
-            color: black
-        }
-        
-        a:hover {
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Users</title>
 </head>
 
 <body>
@@ -27,9 +17,15 @@
         <nav class="navbar navbar-expand-sm navbar-light bg-light">
             <a class="navbar-brand" href="#">Something with users</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item mr-auto">
+                        <a class="nav-link" href="#mapsection">Maps</a>
+                    </li>
+                </ul>
+            </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
 
@@ -51,17 +47,27 @@
         <div class="row">
             <div class="col mt-2 mb-1"><button class="sort btn btn-primary float-right">Sort</button></div>
         </div>
-        <div class="userRow row">
+        <div class="userRow row vh-100">
         </div>
+
+        <section id="mapsection" class="vh-100">
+            <div class="row d-flex align-items-center">
+                <h2 class="align-self-end mt-2 mb-0">Map</h2>
+                <a class="btn btn-outline-secondary text-cente ml-auto mt-2" href="#">GoBack</a>
+            </div>
+
+            <div id="map" class="row mt-2">
+            </div>
+        </section>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
+    <script type="module" src="./assets/js/script.js"></script>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
-    <script src="./assets/js/script.js"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

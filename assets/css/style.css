@@ -1,0 +1,12 @@
+#map {
+    height: 92vh;
+}
+
+a {
+    text-decoration: inherit;
+    color: black
+}
+
+a:hover {
+    text-decoration: none;
+}
