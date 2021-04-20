@@ -16,6 +16,8 @@ const requestdata = (url) => {
 const showResults = async (url) => {
   users = await requestdata(url);
   createCards(users);
+  console.log("After Address function");
+  makeAddress();
 };
 
 // Create the userCars
@@ -64,8 +66,9 @@ function filterUser(value) {
   }
 }
 
-let makeAddress = () => {
+const makeAddress = () => {
   let arrayOfAddress = users.map((user) => user.address);
+  console.log("This is make Address conslole log");
   console.log(arrayOfAddress);
 };
 
