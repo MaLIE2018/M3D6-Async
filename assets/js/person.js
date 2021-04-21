@@ -5,7 +5,6 @@ let user = []
 
 const createPerson = async(url) => {
     user = await module.requestdata(url)
-    console.log("test");
     document.querySelector("title").innerHTML = user.name
     usercol.innerHTML = `<div class="jumbotron vh-100">
     <h1 class="display-4 text-wrap">Hello, world! This is ${user.name}</h1>

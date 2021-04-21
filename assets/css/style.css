@@ -10,3 +10,7 @@ a {
 a:hover {
     text-decoration: none;
 }
+
+.userRow {
+    height: 85vh
+}
