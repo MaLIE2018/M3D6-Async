@@ -1,5 +1,5 @@
 import * as module from '../modules/getdata.js';
-
+import * as test from '../verge'
 
 let url = "https://jsonplaceholder.typicode.com/users"
 const usersection = document.querySelector(".usersection")
@@ -25,7 +25,7 @@ const showResults = async(url) => {
 const createCards = (results) => {
     usersection.querySelector(".userRow").innerHTML = ""
     usersection.querySelector(".userRow").innerHTML += [...results].map((user) => {
-        return `<div class="col-4 mt-1">
+        return `<div class="col-sm-12 col-md-4 mt-1">
                   <a href='person.html?id="${user.id}"'>
                     <div class="card">
                         <div class="card-body">
