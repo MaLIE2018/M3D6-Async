@@ -15,16 +15,17 @@ let map
 
 //Fetch data
 const showResults = async(url) => {
-        users = await module.requestdata(url)
-        createCards(users)
-        makeAddress()
-        window.initMap(map, users)
-    }
-    // Create the userCars
+    users = await module.requestdata(url)
+    createCards(users)
+    makeAddress()
+    module.createGoogleMapScript(map, users)
+}
+
+// Create the userCars
 const createCards = (results) => {
-        usersection.querySelector(".userRow").innerHTML = ""
-        usersection.querySelector(".userRow").innerHTML += [...results].map((user) => {
-            return `<div class="col-4 mt-1">
+    usersection.querySelector(".userRow").innerHTML = ""
+    usersection.querySelector(".userRow").innerHTML += [...results].map((user) => {
+        return `<div class="col-4 mt-1">
                   <a href='person.html?id="${user.id}"'>
                     <div class="card">
                         <div class="card-body">
@@ -35,10 +36,11 @@ const createCards = (results) => {
                       </div>
                   </a>
                 </div>`
-        }).join("")
+    }).join("")
 
-    }
-    //Filters for the users choice
+}
+
+//Filters for the users choice
 function filterUser(value) {
     const filterIndex = select.selectedIndex
     let filter = select.options[select.selectedIndex].text
@@ -54,8 +56,6 @@ function filterUser(value) {
     }
 
 }
-
-
 
 const makeAddress = () => {
     let arrayOfAddress = users.map((user) => {
@@ -93,14 +93,8 @@ const sort = () => {
     createCards(users)
 }
 
-
-
 window.onload = () => {
     showResults(url)
     searchField.addEventListener("keyup", function() { filterUser(this.value) })
     sortButton.addEventListener("click", () => { sort() });
-    module.createGoogleMapScript()
-
-
-
 }

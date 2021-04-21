@@ -1,13 +1,34 @@
-export const requestdata = (url) => {
-    return new Promise((resolve) => {
-        fetch(url)
-            .then((response) => response.json())
-            .then((data) => resolve(data))
-            .catch((err) => console.log(err))
-    })
+export const requestdata = async(url) => {
+    try {
+        let response = await fetch(url)
+        let responseData = await response.json()
+        return responseData
+    } catch (error) {
+        console.log(error)
+    }
+
 }
 
 //Google Maps
+export const createGoogleMapScript = (map, users) => {
+    // Create the script tag, set the appropriate attributes
+    var script = document.createElement('script');
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCTJdaONjCrIrgW_703W_yfGBaEtxAZCJM&callback=initMap';
+    script.async = true;
+
+    // Attach your callback function to the `window` object
+    window.initMap = async function() {
+        map = await new google.maps.Map(document.getElementById("map"), {
+            center: { lat: -34.397, lng: 150.644 },
+            zoom: 2,
+        })
+        createMarker(map, users)
+    };
+    // Append the 'script' element to 'head'
+    document.head.appendChild(script);
+
+}
+
 const createMarker = (map, users) => {
     users.forEach((user) => {
         let myLatlng = new google.maps.LatLng(user.address.geo.lat, user.address.geo.lng);
@@ -23,26 +44,5 @@ const createMarker = (map, users) => {
         return marker.setMap(map);
 
     })
-
-}
-
-export const createGoogleMapScript = () => {
-    // Create the script tag, set the appropriate attributes
-    var script = document.createElement('script');
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCTJdaONjCrIrgW_703W_yfGBaEtxAZCJM&callback=initMap';
-    script.async = true;
-
-    // Attach your callback function to the `window` object
-    window.initMap = function(map, users) {
-        map = new google.maps.Map(document.getElementById("map"), {
-            center: { lat: -34.397, lng: 150.644 },
-            zoom: 2,
-        });
-        createMarker(map, users)
-            // JS API is loaded and available
-    };
-
-    // Append the 'script' element to 'head'
-    document.head.appendChild(script);
 
 }
