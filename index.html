@@ -13,8 +13,8 @@
 </head>
 
 <body>
-    <div class="usersection container-md">
-        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <div class="usersection container-md position-relative">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
             <a class="navbar-brand" href="#">Something with users</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -22,13 +22,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item mr-auto">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item mr-auto">
                         <a class="nav-link" href="#mapsection">Maps</a>
                     </li>
                 </ul>
             </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-
                     <li class="nav-item dropdown">
                         <select class="select custom-select">
                         <option selected>Open this select menu</option>
@@ -46,19 +48,23 @@
         </nav>
         <div class="row">
             <div class="col mt-2 mb-1"><button class="sort btn btn-primary float-right">Sort</button></div>
-        </div>
-        <div class="userRow row">
-        </div>
 
-        <section id="mapsection" class="vh-100">
-            <div class="row d-flex align-items-center">
-                <h2 class="align-self-end mt-2 mb-0">Map</h2>
-                <a class="btn btn-outline-secondary text-cente ml-auto mt-2" href="#">GoBack</a>
+            <div class="userRow row mx-0">
             </div>
+            <div class="mapRow row w-100 mx-0 flex-column">
+                <div class="row d-flex mt-2 mx-3">
+                    <div>
+                        <h2 class="mb-0">Map</h2>
+                    </div>
+                    <div class="col p-0"><a class="btn btn-outline-secondary text-center float-right" href="#">GoBack</a></div>
 
-            <div id="map" class="row mt-2">
+                </div>
+                <div id="mapsection" class="col">
+                    <div id="map" class="my-2">
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
